@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
+        System.out.println("Activity Created");
+
          adapter = new ViewPagerAdapter(fragmentManager, getLifecycle());
 
          viewpager2.setAdapter(adapter);
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
          viewpager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
              @Override
              public void onPageSelected(int position) {
+                 System.out.println("Fragment Selected");
                  super.onPageSelected(position);
                  tablayout.selectTab(tablayout.getTabAt(position));
              }
